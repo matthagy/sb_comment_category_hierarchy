@@ -17,11 +17,18 @@ class Node {
     }
 
     getChildren(): Node[] {
-        return this.visible ? this.children : [];
+        return this.children;//.filter(c => c.visible);
     }
 
-    toggleVisibility(): void {
+    toggleVisible(): void {
         this.visible = !this.visible;
+    }
+
+    toggleChildrenVisible(): void {
+        for (const child of this.children) {
+            child.toggleVisible();
+            child.toggleChildrenVisible();
+        }
     }
 }
 
@@ -54,55 +61,64 @@ const treeLayout = d3.tree<Node>()
 ;
 
 
+let rootNode = d3.hierarchy(topLevelNode, d => d.getChildren())
+let layoutNode = treeLayout(rootNode);
+
+const links = g.selectAll(".link")
+    .data(layoutNode.descendants().slice(1))
+    .enter()
+    .append("path")
+    .style("stroke", "#ccc")
+    .attr("fill", "none")
+    .attr("r", 3)
+    .attr("class", "link")
+    .attr("d", d => {
+        const parent = d.parent;
+        if (!parent) {
+            throw new Error("Parent is null");
+        }
+        return "M" + d.y + "," + d.x
+            + "C" + (d.y + parent.y) / 2 + "," + d.x
+            + " " + (d.y + parent.y) / 2 + "," + parent.x
+            + " " + parent.y + "," + parent.x;
+    });
+
+const nodes = g
+    .selectAll(".node")
+    .data(layoutNode.descendants())
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .attr("transform", d => "translate(" + d.y + "," + d.x + ")");
+
+const nodeCircles = nodes
+    .append("circle")
+    .attr("r", 10)
+    .attr("fill", "steelblue")
+    .on("click", (event, d) => {
+        console.log(`Clicked ${d.data.title} ${d.data.visible}}`);
+        d.data.toggleChildrenVisible();
+        update();
+    });
+
+const nodeTexts = nodes
+    .append("text")
+    .text((d) => `${d.data.title} (${d.data.count})`)
+    .attr("transform", function (d) {
+        return "translate(12,5)";
+    });
+
 function update() {
     console.log("update");
-    const rootNode = d3.hierarchy(topLevelNode, d => d.getChildren())
-    const layoutNode = treeLayout(rootNode);
 
-    const links = g.selectAll(".link")
-        .data(layoutNode.descendants().slice(1))
-        .enter()
-        .append("path")
-        .style("stroke", "#ccc")
-        .attr("opacity", 0.25)
-        .attr("fill", "none")
-        .attr("r", 3)
-        .attr("class", "link")
-        .attr("d", d => {
-            const parent = d.parent;
-            if (!parent) {
-                throw new Error("Parent is null");
-            }
-            return "M" + d.y + "," + d.x
-                + "C" + (d.y + parent.y) / 2 + "," + d.x
-                + " " + (d.y + parent.y) / 2 + "," + parent.x
-                + " " + parent.y + "," + parent.x;
-        });
+    rootNode = d3.hierarchy(topLevelNode, d => d.getChildren());
+    layoutNode = treeLayout(rootNode);
+    links.data(layoutNode.descendants().slice(1));
+    nodes.data(layoutNode.descendants());
+    links.attr("opacity", d => d.data.visible ? 0.25 : 0);
+    nodeCircles.attr("opacity", d => d.data.visible ? 1 : 0);
+    nodeTexts.attr("opacity", d => d.data.visible ? 1 : 0);
 
-
-    const nodes = g
-        .selectAll(".node")
-        .data(layoutNode.descendants())
-        .enter()
-        .append("g")
-        .attr("class", "node")
-        .attr("transform", d => "translate(" + d.y + "," + d.x + ")")
-    nodes
-        .append("circle")
-        .attr("r", 10)
-        .attr("fill", "steelblue")
-        .on("click", (event, d) => {
-            console.log(`Clicked ${d.data.title} ${d.data.visible}}`);
-            d.data.toggleVisibility();
-            update();
-        });
-
-    nodes
-        .append("text")
-        .text((d) => `${d.data.title} (${d.data.count})`)
-        .attr("transform", function (d) {
-            return "translate(12,5)";
-        });
 }
 
 update();
@@ -118,6 +134,7 @@ const zoom = d3
         g.attr("transform", e.transform);
         g.style("stroke-width", 3 / Math.sqrt(e.transform.k));
         g.selectAll(".node").attr("r", 5 / Math.sqrt(e.transform.k));
+        g.selectAll(".like").attr("r", 3 / Math.sqrt(e.transform.k));
     });
 svg.call(zoom);
 
