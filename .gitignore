@@ -1,0 +1,7 @@
+.idea/
+.ipynb_checkpoints/
+__pycache__/
+venv/
+data/
+node_modules/
+dist/
