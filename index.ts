@@ -1,6 +1,8 @@
 import * as d3 from "d3";
 import {node_data, NodeData} from "./nodes";
 import {BaseType} from "d3";
+import './main.css';
+
 
 class Node {
     id: string;
@@ -32,6 +34,7 @@ class Node {
             child.toggleChildrenVisible(collapse);
         }
     }
+
 }
 
 function createNode(data: NodeData): Node {
@@ -41,7 +44,7 @@ function createNode(data: NodeData): Node {
 const topLevelNode = createNode(node_data);
 
 const width = 1800;
-const height = 1200;
+const height = 1000;
 
 const svg = d3
     .select("#tree-container")
@@ -59,11 +62,11 @@ const g = svg.append("g");
 
 const treeLayout = d3.tree<Node>()
     .size([width, height])
-    .nodeSize([30, 320])
+    .nodeSize([30, 350])
 ;
 
 
-let rootNode = d3.hierarchy(topLevelNode, d => d.getChildren())
+let rootNode = d3.hierarchy(topLevelNode, d => d.getChildren());
 let layoutNode = treeLayout(rootNode);
 
 type NodeSelectionType = d3.Selection<BaseType, d3.HierarchyPointNode<Node>, SVGGElement, unknown>;
@@ -130,6 +133,15 @@ function nodeRadius(d: d3.HierarchyPointNode<Node>) {
     return 2.3 * Math.sqrt(d.data.count);
 }
 
+const nodeInfoElement = document.getElementById("node-info");
+
+function displayNodeInfo(node: Node) {
+    if (nodeInfoElement === null) {
+        return;
+    }
+    nodeInfoElement.innerText = node.titles.join("\n");
+}
+
 function nodeShapeStyle(selection: NodeShapeType): NodeShapeType {
     return selection
         .attr("r", d => nodeRadius(d))
@@ -142,6 +154,7 @@ function nodeShapeStyle(selection: NodeShapeType): NodeShapeType {
                 update();
             } else {
                 console.log(`Bare clicked ${d.data.titles[0]} ${d.data.visible}}`);
+                displayNodeInfo(d.data);
             }
         });
 }
@@ -153,7 +166,10 @@ function nodeTextAppend(selection: NodePathType): NodeTextType {
 
 function nodeTextStyle(selection: NodeTextType): NodeTextType {
     return selection
-        .text((d) => `${d.data.titles[0]} (${d.data.count})`)
+        .text((d) => {
+            const percent = 100 * d.data.count / topLevelNode.count;
+            return `${d.data.titles[0]} (${percent.toFixed(1)}%)`;
+        })
         .attr("transform", d => `translate(${1.2 * nodeRadius(d)},5)`)
         .attr("opacity", d => d.data.visible ? 1 : 0);
 }
