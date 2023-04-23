@@ -7,14 +7,17 @@ import './main.css';
 class Node {
     id: string;
     titles: string[];
+    summary: string;
     count: number;
     children: Node[];
     visible: boolean = true;
     childCollapses: boolean = false;
+    selected: boolean = false;
 
-    constructor(id: string, titles: string[], count: number, children: Node[]) {
+    constructor(id: string, titles: string[], summary: string, count: number, children: Node[]) {
         this.id = id;
         this.titles = titles;
+        this.summary = summary;
         this.count = count;
         this.children = children;
     }
@@ -35,35 +38,54 @@ class Node {
         }
     }
 
+    visit(visitor: (node: Node) => void): void {
+        visitor(this);
+        for (const child of this.children) {
+            child.visit(visitor);
+        }
+    }
 }
 
 function createNode(data: NodeData): Node {
-    return new Node(data.id, data.titles, data.count, (data.children ?? []).map(createNode));
+    return new Node(data.id, data.titles, data.summary, data.count, (data.children ?? []).map(createNode));
 }
 
 const topLevelNode = createNode(node_data);
 
 const width = 1800;
-const height = 1000;
+const height = 800;
 
 const svg = d3
     .select("#tree-container")
     .append("svg")
-    .attr("width", width)
+    //   .attr("width", width)
     .attr("height", height)
-    .attr("viewBox", [-width / 2, -height / 2, width, height])
+    //   .attr("viewBox", [-width / 2, -height / 2, width, height])
     .style("cursor", "crosshair")
-    .style("border", "1px solid black")
+    .style("border", "1px solid black");
 
-//    .attr("transform", `translate(${width / 2},${height / 2})`)
-;
+const initialZoomTransform = "translate(-770,113) scale(0.8) ";
+const g = svg.append("g")
+    .attr("transform", initialZoomTransform);
 
-const g = svg.append("g");
 
 const treeLayout = d3.tree<Node>()
     .size([width, height])
-    .nodeSize([30, 350])
+    .nodeSize([40, 350])
 ;
+
+function updateWidth() {
+    const width = window.innerWidth;
+    svg.attr("width", width);
+    svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
+    // treeLayout.size([width, height]);
+}
+
+updateWidth();
+window.addEventListener("resize", () => {
+    updateWidth();
+    update();
+});
 
 
 let rootNode = d3.hierarchy(topLevelNode, d => d.getChildren());
@@ -130,23 +152,17 @@ function nodeShapeAppend(selection: NodePathType): NodeShapeType {
 }
 
 function nodeRadius(d: d3.HierarchyPointNode<Node>) {
-    return 2.3 * Math.sqrt(d.data.count);
+    return 3 * Math.pow(d.data.count, 0.4);
 }
 
-const nodeInfoElement = document.getElementById("node-info");
-
-function displayNodeInfo(node: Node) {
-    if (nodeInfoElement === null) {
-        return;
-    }
-    nodeInfoElement.innerText = node.titles.join("\n");
-}
 
 function nodeShapeStyle(selection: NodeShapeType): NodeShapeType {
     return selection
         .attr("r", d => nodeRadius(d))
         .attr("fill", d => d.data.children.length > 0 ? "steelblue" : "orange")
         .attr("opacity", d => d.data.visible ? 1 : 0)
+        .attr("stroke", d => d.data.selected ? "red" : "black")
+        .attr("stroke-width", d => d.data.selected ? 3 : 1)
         .on("click", (e, d) => {
             if (e.ctrlKey) {
                 console.log(`Clicked w/ Control ${d.data.titles[0]} ${d.data.visible}}`);
@@ -155,6 +171,9 @@ function nodeShapeStyle(selection: NodeShapeType): NodeShapeType {
             } else {
                 console.log(`Bare clicked ${d.data.titles[0]} ${d.data.visible}}`);
                 displayNodeInfo(d.data);
+                topLevelNode.visit(node => node.selected = false);
+                d.data.selected = true;
+                update();
             }
         });
 }
@@ -207,6 +226,34 @@ function update() {
     existingNodeText = mergeNodeText;
 }
 
+const possibleTitlesList = document.getElementById("node-titles");
+const nodeSummaryDiv = document.getElementById("node-summary");
+
+function removeChildren(element: HTMLElement) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+function displayNodeInfo(node: Node) {
+    if (possibleTitlesList !== null) {
+        removeChildren(possibleTitlesList);
+        for (const title of node.titles) {
+            const li = document.createElement("li");
+            li.innerText = title;
+            possibleTitlesList.appendChild(li);
+        }
+    }
+    if (nodeSummaryDiv !== null) {
+        removeChildren(nodeSummaryDiv);
+        node.summary.split(/\n+/).forEach(paragraph => {
+            const p = document.createElement("p");
+            p.innerText = paragraph;
+            nodeSummaryDiv.appendChild(p);
+        });
+    }
+}
+
 function setInitialVisibility(node: Node, depth: number = 0) {
     if (depth >= 3) {
         node.toggleChildrenVisible();
@@ -215,7 +262,7 @@ function setInitialVisibility(node: Node, depth: number = 0) {
     }
 }
 
-setInitialVisibility(topLevelNode);
+// setInitialVisibility(topLevelNode);
 update();
 
 function castPoint(x: any): d3.HierarchyPointNode<Node> {
@@ -229,10 +276,8 @@ const zoom = d3
     //.translateExtent([[0, 0], [width, height]])
     .on("zoom", e => {
         // console.log(`Zoom: ${e.transform}`);
-        g.attr("transform", e.transform);
-        //g.style("stroke-width", 3 / Math.sqrt(e.transform.k));
-        //g.selectAll(".node").attr("r", d => Math.sqrt(castPoint(d).data.count) / Math.sqrt(e.transform.k));
-        //g.selectAll(".like").attr("r", 3 / Math.sqrt(e.transform.k));
+        g.attr("transform",  initialZoomTransform +
+            e.transform.toString());
     });
 svg.call(zoom);
 

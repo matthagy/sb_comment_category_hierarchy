@@ -6,3 +6,30 @@ body {
     cursor: default;
     -webkit-font-smoothing: antialiased;
 }
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.float-left {
+    float: left;
+    margin-left: 20px;
+}
+
+#node-titles {
+    margin-top: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#node-summary {
+    max-width: 900px;
+    margin-top: 0;
+    padding-left: 0;
+}

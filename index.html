@@ -5,14 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My Tree Webapp">
+    <meta name="description" content="Hierarchical Categories of Slow Boring Comments">
     <meta name="author" content="Matt Hagy <matthew.hagy@gmail.com>">
 
-    <title>My Tree Webapp</title>
+    <title>Hierarchical Categories of Slow Boring Comments</title>
 </head>
 
 <body>
+<h1>Hierarchical Categories of Slow Boring Comments</h1>
+<p>
+    Click a node to see the summary and suggested titles.
+    Control click to expand or contract an intermediate node.
+    You can zoom with the mouse wheel and pan by dragging your cursor.
+</p>
 <div id="tree-container"></div>
-<div id="node-info"></div>
+<div id="node-info">
+    <div class="float-left">
+        <h2>Suggested Titles</h2>
+        <ul id="node-titles"></ul>
+    </div>
+    <div class="float-left">
+        <h2>Summary</h2>
+        <div id="node-summary">
+            <p>
+                <i>Click a node to see the summary</i>
+            </p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
