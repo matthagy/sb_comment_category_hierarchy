@@ -4,15 +4,15 @@ import {BaseType} from "d3";
 
 class Node {
     id: string;
-    title: string;
+    titles: string[];
     count: number;
     children: Node[];
     visible: boolean = true;
     childCollapses: boolean = false;
 
-    constructor(id: string, title: string, count: number, children: Node[]) {
+    constructor(id: string, titles: string[], count: number, children: Node[]) {
         this.id = id;
-        this.title = title;
+        this.titles = titles;
         this.count = count;
         this.children = children;
     }
@@ -35,7 +35,7 @@ class Node {
 }
 
 function createNode(data: NodeData): Node {
-    return new Node(data.id, data.title ?? "<na>", data.count, (data.children ?? []).map(createNode));
+    return new Node(data.id, data.titles, data.count, (data.children ?? []).map(createNode));
 }
 
 const topLevelNode = createNode(node_data);
@@ -59,7 +59,7 @@ const g = svg.append("g");
 
 const treeLayout = d3.tree<Node>()
     .size([width, height])
-    .nodeSize([20, 300])
+    .nodeSize([30, 320])
 ;
 
 
@@ -137,11 +137,11 @@ function nodeShapeStyle(selection: NodeShapeType): NodeShapeType {
         .attr("opacity", d => d.data.visible ? 1 : 0)
         .on("click", (e, d) => {
             if (e.ctrlKey) {
-                console.log(`Clicked w/ Control ${d.data.title} ${d.data.visible}}`);
+                console.log(`Clicked w/ Control ${d.data.titles[0]} ${d.data.visible}}`);
                 d.data.toggleChildrenVisible();
                 update();
             } else {
-                console.log(`Bare clicked ${d.data.title} ${d.data.visible}}`);
+                console.log(`Bare clicked ${d.data.titles[0]} ${d.data.visible}}`);
             }
         });
 }
@@ -153,7 +153,7 @@ function nodeTextAppend(selection: NodePathType): NodeTextType {
 
 function nodeTextStyle(selection: NodeTextType): NodeTextType {
     return selection
-        .text((d) => `${d.data.title} (${d.data.count})`)
+        .text((d) => `${d.data.titles[0]} (${d.data.count})`)
         .attr("transform", d => `translate(${1.2 * nodeRadius(d)},5)`)
         .attr("opacity", d => d.data.visible ? 1 : 0);
 }

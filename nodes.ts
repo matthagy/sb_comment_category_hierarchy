@@ -2,7 +2,7 @@
 export interface NodeData {
   id: string;
   count: number;
-  title?: string;
+  titles: string[];
   children?: NodeData[];
   comments?: Object[];
 }
@@ -10,381 +10,581 @@ export interface NodeData {
 export const node_data: NodeData = {
   "id": "branch0",
   "count": 1000,
-  "title": "Mixed political commentary.",
+  "titles": [
+    "Varied Opinions.",
+    "Assorted Opinions",
+    "Mixed Bag of Comments.",
+    "Varied Opinions",
+    "Assorted Opinions."
+  ],
   "children": [
     {
       "id": "branch1",
-      "count": 167,
-      "title": "Political Commentary.",
+      "count": 215,
+      "titles": [
+        "Political Observations",
+        "Political Observations.",
+        "Political Commentary.",
+        "Political Observations.",
+        "Mixed Political Views."
+      ],
       "children": [
         {
-          "id": "branch2",
-          "count": 21,
-          "title": "Political commentary.",
-          "children": [
-            {
-              "id": "leaf3",
-              "count": 3,
-              "title": "Marijuana policies.",
-              "comments": []
-            },
-            {
-              "id": "leaf4",
-              "count": 2,
-              "title": "Criticism.",
-              "comments": []
-            },
-            {
-              "id": "leaf5",
-              "count": 4,
-              "title": "Political Analysis",
-              "comments": []
-            },
-            {
-              "id": "leaf6",
-              "count": 7,
-              "title": "U.S. Political Commentary",
-              "comments": []
-            },
-            {
-              "id": "leaf7",
-              "count": 3,
-              "title": "\"Political Commentary\"",
-              "comments": []
-            },
-            {
-              "id": "leaf8",
-              "count": 2,
-              "title": "Indictment discussion.",
-              "comments": []
-            }
-          ]
-        },
-        {
-          "id": "branch9",
-          "count": 42,
-          "title": "Political Insights.",
-          "children": [
-            {
-              "id": "leaf10",
-              "count": 3,
-              "title": "Dissatisfaction with Biden Administration.",
-              "comments": []
-            },
-            {
-              "id": "leaf11",
-              "count": 13,
-              "title": "Baffling Political Discourse.",
-              "comments": []
-            },
-            {
-              "id": "leaf12",
-              "count": 6,
-              "title": "Legislative Strategy",
-              "comments": []
-            },
-            {
-              "id": "leaf13",
-              "count": 6,
-              "title": "Critiques",
-              "comments": []
-            },
-            {
-              "id": "leaf14",
-              "count": 6,
-              "title": "Political Analysis",
-              "comments": []
-            },
-            {
-              "id": "leaf15",
-              "count": 8,
-              "title": "Political and Social Analysis.",
-              "comments": []
-            }
-          ]
-        },
-        {
-          "id": "leaf16",
-          "count": 1,
-          "title": "Voter Identification",
+          "id": "leaf2",
+          "count": 49,
+          "titles": [
+            "Political Observations",
+            "Political Musings.",
+            "Political opinions.",
+            "Political Observations.",
+            "Political Commentary"
+          ],
           "comments": []
         },
         {
-          "id": "leaf17",
-          "count": 6,
-          "title": "Party Platforms.",
+          "id": "leaf3",
+          "count": 90,
+          "titles": [
+            "Progressive Ideology Reactions",
+            "Progressive Ideological Overreach.",
+            "Progressive Movement Critique.",
+            "Political commentary.",
+            "Political Bubble Comments"
+          ],
           "comments": []
         },
         {
-          "id": "leaf18",
-          "count": 10,
-          "title": "Opinions on Politics",
+          "id": "leaf4",
+          "count": 37,
+          "titles": [
+            "Political Reform Proposals.",
+            "Political Procedural Analysis.",
+            "Political Procedural Discussion.",
+            "Political Procedural Discussions.",
+            "Political Procedural Debate."
+          ],
           "comments": []
         },
         {
-          "id": "leaf19",
-          "count": 5,
-          "title": "Constitutional Procedure",
+          "id": "leaf5",
+          "count": 16,
+          "titles": [
+            "Political Observations.",
+            "Political Observations.",
+            "Political Observations.",
+            "Democracy and Politics.",
+            "Democracy and Governance."
+          ],
           "comments": []
         },
         {
-          "id": "branch20",
-          "count": 38,
-          "title": "Political Commentary.",
-          "children": [
-            {
-              "id": "leaf21",
-              "count": 4,
-              "title": "Climate Change Concerns.",
-              "comments": []
-            },
-            {
-              "id": "leaf22",
-              "count": 14,
-              "title": "Political Observations",
-              "comments": []
-            },
-            {
-              "id": "leaf23",
-              "count": 5,
-              "title": "GOP Primary Predictions",
-              "comments": []
-            },
-            {
-              "id": "leaf24",
-              "count": 4,
-              "title": "Political Analysis",
-              "comments": []
-            },
-            {
-              "id": "leaf25",
-              "count": 11,
-              "title": "\"Political Analysis and Musings\"",
-              "comments": []
-            }
-          ]
-        },
-        {
-          "id": "branch26",
-          "count": 44,
-          "title": "Political Observations.",
-          "children": [
-            {
-              "id": "leaf27",
-              "count": 4,
-              "title": "Political Commentary",
-              "comments": []
-            },
-            {
-              "id": "leaf28",
-              "count": 8,
-              "title": "Political Commentary",
-              "comments": []
-            },
-            {
-              "id": "leaf29",
-              "count": 4,
-              "title": "Opinions on Politics",
-              "comments": []
-            },
-            {
-              "id": "leaf30",
-              "count": 5,
-              "title": "White Privilege and Politics",
-              "comments": []
-            },
-            {
-              "id": "leaf31",
-              "count": 2,
-              "title": "Survey of Public Opinion.",
-              "comments": []
-            },
-            {
-              "id": "leaf32",
-              "count": 12,
-              "title": "Political Strategy Discussions.",
-              "comments": []
-            },
-            {
-              "id": "leaf33",
-              "count": 4,
-              "title": "\"Race and Politics\"",
-              "comments": []
-            },
-            {
-              "id": "leaf34",
-              "count": 5,
-              "title": "Discussion on Political Issues.",
-              "comments": []
-            }
-          ]
+          "id": "leaf6",
+          "count": 23,
+          "titles": [
+            "Institutional Issues",
+            "Institutional Critique.",
+            "Institutional Critiques",
+            "Institutional Critiques.",
+            "Institutional Frustrations"
+          ],
+          "comments": []
         }
       ]
     },
     {
-      "id": "branch35",
-      "count": 833,
-      "title": "Diverse Commentary.",
+      "id": "branch7",
+      "count": 785,
+      "titles": [
+        "Diverse Opinions",
+        "Diverse viewpoints on various topics.",
+        "\"Varied opinion and analysis\"",
+        "Opinions on various topics.",
+        "Varied Opinions"
+      ],
       "children": [
         {
-          "id": "branch36",
-          "count": 121,
-          "title": "Urban Discussion Group.",
+          "id": "branch8",
+          "count": 422,
+          "titles": [
+            "Diverse Social Commentary.",
+            "Diverse Social Commentary.",
+            "\"Varied Social Commentary\"",
+            "Contrarian Perspectives",
+            "\"Varied social and political commentary\""
+          ],
           "children": [
             {
-              "id": "leaf37",
-              "count": 19,
-              "title": "NIMBY Comments.",
-              "comments": []
-            },
-            {
-              "id": "leaf38",
-              "count": 2,
-              "title": "Railway Electrification Systems",
-              "comments": []
-            },
-            {
-              "id": "leaf39",
-              "count": 3,
-              "title": "Transportation Options.",
-              "comments": []
-            },
-            {
-              "id": "leaf40",
-              "count": 8,
-              "title": "Transportation Discussion",
-              "comments": []
-            },
-            {
-              "id": "branch41",
-              "count": 25,
-              "title": "Geographic Musings.",
+              "id": "branch9",
+              "count": 114,
+              "titles": [
+                "Mixed Bag of Reactions.",
+                "Reader Reactions.",
+                "Mixed Bag of Reactions.",
+                "Assorted Reader Reactions.",
+                "Diverse Reader Responses."
+              ],
               "children": [
                 {
-                  "id": "leaf42",
-                  "count": 2,
-                  "title": "Transportation Issues",
-                  "comments": []
-                },
-                {
-                  "id": "leaf43",
-                  "count": 4,
-                  "title": "\"Regional Transit and Politics\"",
-                  "comments": []
-                },
-                {
-                  "id": "leaf44",
-                  "count": 4,
-                  "title": "Geographic Observations.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf45",
-                  "count": 5,
-                  "title": "Urban Living Experiences",
-                  "comments": []
-                },
-                {
-                  "id": "leaf46",
-                  "count": 2,
-                  "title": "Tax and Misdemeanor.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf47",
-                  "count": 3,
-                  "title": "State Comparisons",
-                  "comments": []
-                },
-                {
-                  "id": "leaf48",
-                  "count": 5,
-                  "title": "Urban Governance",
-                  "comments": []
-                }
-              ]
-            },
-            {
-              "id": "branch49",
-              "count": 64,
-              "title": "Mixed Bag of Comments",
-              "children": [
-                {
-                  "id": "leaf50",
-                  "count": 7,
-                  "title": "Homelessness and Mental Health.",
-                  "comments": []
-                },
-                {
-                  "id": "branch51",
-                  "count": 22,
-                  "title": "Urban Livability Comments",
+                  "id": "branch10",
+                  "count": 32,
+                  "titles": [
+                    "Media Criticism.",
+                    "Media Commentary.",
+                    "Media Commentary.",
+                    "Media Critiques.",
+                    "Media Criticism."
+                  ],
                   "children": [
                     {
-                      "id": "leaf52",
-                      "count": 4,
-                      "title": "Garbage collection practices.",
+                      "id": "leaf11",
+                      "count": 21,
+                      "titles": [
+                        "Journalistic Integrity and Ethics.",
+                        "Media Criticism.",
+                        "Media Criticism.",
+                        "Media Criticism",
+                        "Media Critique."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf53",
-                      "count": 6,
-                      "title": "\"Urban Living and Transportation\"",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf54",
-                      "count": 7,
-                      "title": "Housing Policy Debate.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf55",
-                      "count": 5,
-                      "title": "Urban Issues.",
+                      "id": "leaf12",
+                      "count": 11,
+                      "titles": [
+                        "Political Opinions.",
+                        "Political Commentary.",
+                        "Political Observations.",
+                        "Political Musings.",
+                        "Political Observations"
+                      ],
                       "comments": []
                     }
                   ]
                 },
                 {
-                  "id": "branch56",
-                  "count": 35,
-                  "title": "Housing and Urban Development.",
+                  "id": "branch13",
+                  "count": 82,
+                  "titles": [
+                    "Contrarian Opinions.",
+                    "Critiques.",
+                    "\"Assorted Reader Feedback\"",
+                    "\"Varied Takes and Reactions\"",
+                    "\"SB Reader Commentary\""
+                  ],
                   "children": [
                     {
-                      "id": "leaf57",
-                      "count": 5,
-                      "title": "Housing Regulations",
+                      "id": "leaf14",
+                      "count": 15,
+                      "titles": [
+                        "Opinions",
+                        "Life and Reflections.",
+                        "\"Varied Discussions\"",
+                        "\"Reader Feedback\"",
+                        "Life Milestones and Reflections."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf58",
-                      "count": 11,
-                      "title": "\"Urban Development and Housing\"",
+                      "id": "leaf15",
+                      "count": 10,
+                      "titles": [
+                        "Subscriber Feedback.",
+                        "\"Subscribers' Feedback\"",
+                        "Reader Feedback.",
+                        "Subscribers' Interactions.",
+                        "Reader Feedback."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf59",
-                      "count": 3,
-                      "title": "Rural Economic Imbalance.",
+                      "id": "leaf16",
+                      "count": 8,
+                      "titles": [
+                        "Reader Feedback.",
+                        "Reader Feedback.",
+                        "Discussion on Ezra's Evolution.",
+                        "Critiques and Inquiries.",
+                        "Reader Feedback."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf60",
+                      "id": "leaf17",
+                      "count": 24,
+                      "titles": [
+                        "Mixed Content Reactions.",
+                        "Media and Society Discussions",
+                        "\"Varied Opinions on Various Topics",
+                        "Mixed Bag of Opinions",
+                        "\"Assorted Opinions\""
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf18",
+                      "count": 25,
+                      "titles": [
+                        "Online Discourse.",
+                        "Online Discourse",
+                        "\"Online Discourse and its Pitfalls",
+                        "Online Discourse.",
+                        "Online Discourse"
+                      ],
+                      "comments": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "branch19",
+              "count": 308,
+              "titles": [
+                "Diverse Opinions",
+                "Varied perspectives.",
+                "Diverse perspectives on society.",
+                "Varied Perspectives.",
+                "Diverse Opinions"
+              ],
+              "children": [
+                {
+                  "id": "branch20",
+                  "count": 56,
+                  "titles": [
+                    "Opinions on Education Policy.",
+                    "Education and Society Opinions.",
+                    "Opinions on Education Policy.",
+                    "Education and Society Opinions",
+                    "Controversial Education Perspectives."
+                  ],
+                  "children": [
+                    {
+                      "id": "leaf21",
+                      "count": 24,
+                      "titles": [
+                        "Education-related commentary.",
+                        "Education and Society Comments.",
+                        "Education and Society Discourse.",
+                        "Education Debates",
+                        "Education and Society Discussions."
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf22",
+                      "count": 9,
+                      "titles": [
+                        "School Reopening Debate.",
+                        "School reopening debate comments.",
+                        "School reopening debate.",
+                        "School reopening discussion.",
+                        "School reopening debate."
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf23",
+                      "count": 23,
+                      "titles": [
+                        "Child Rearing and Education.",
+                        "Parental Decision Making.",
+                        "Parenting and Education Comments.",
+                        "Parental Decision Making.",
+                        "Parental Decision-Making"
+                      ],
+                      "comments": []
+                    }
+                  ]
+                },
+                {
+                  "id": "branch24",
+                  "count": 50,
+                  "titles": [
+                    "Academic Commentary Group.",
+                    "Academic Commentary.",
+                    "\"Varied Academic Discourse\"",
+                    "Diverse and thought-provoking opinions",
+                    "Academic Discourse"
+                  ],
+                  "children": [
+                    {
+                      "id": "leaf25",
                       "count": 6,
-                      "title": "Urban growth and economy.",
+                      "titles": [
+                        "Education and Inequality.",
+                        "\"Varied perspectives on education and charity",
+                        "Opinions on Social Issues.",
+                        "Debates on Education and Inequality",
+                        "Contentious opinions on education."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf61",
-                      "count": 5,
-                      "title": "Land Use and Housing",
+                      "id": "leaf26",
+                      "count": 4,
+                      "titles": [
+                        "Commentary threads.",
+                        "Commentary Group.",
+                        "Commentary Group",
+                        "Feedback on Content and Discussion.",
+                        "Commentary on Various Topics."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf62",
-                      "count": 5,
-                      "title": "Comparative Homelessness and Living Standards.",
+                      "id": "leaf27",
+                      "count": 12,
+                      "titles": [
+                        "Expertise and Academic Siloing.",
+                        "Expertise and Evidence",
+                        "Expertise and Scientific Method",
+                        "Expertise and knowledge silos.",
+                        "Expertise and Evidence"
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf28",
+                      "count": 28,
+                      "titles": [
+                        "Higher Education Commentary.",
+                        "Education System Comments",
+                        "Higher Education Commentary.",
+                        "Education Perspectives",
+                        "Education commentary."
+                      ],
+                      "comments": []
+                    }
+                  ]
+                },
+                {
+                  "id": "branch29",
+                  "count": 85,
+                  "titles": [
+                    "Gender and Sports.",
+                    "Varied Personal Opinions.",
+                    "Gender and Identity Issues.",
+                    "Gender and Identity Issues.",
+                    "Diverse Perspectives on Controversial Issues"
+                  ],
+                  "children": [
+                    {
+                      "id": "leaf30",
+                      "count": 25,
+                      "titles": [
+                        "Abortion and Trans Sports.",
+                        "Abortion and Gender Identity.",
+                        "Abortion and Transgender Rights.",
+                        "Abortion and Gender Identity.",
+                        "Abortion and Transgender Sports"
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf31",
+                      "count": 8,
+                      "titles": [
+                        "Pornography and Minors.",
+                        "Pornography and Minors",
+                        "Porn and Minors",
+                        "\"Pornography and Children\"",
+                        "Pornography and Minors"
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "branch32",
+                      "count": 17,
+                      "titles": [
+                        "Mixed-topic Comments",
+                        "Varied Discussions.",
+                        "Assorted Discussions.",
+                        "Diverse Topics",
+                        "Media and Culture Discussions."
+                      ],
+                      "children": [
+                        {
+                          "id": "leaf33",
+                          "count": 8,
+                          "titles": [
+                            "Gender and Sexuality Discussions.",
+                            "Gender and sexuality comments.",
+                            "Gender and identity discussion.",
+                            "Gender and Sexuality Discussions",
+                            "Gender and sexuality discussion."
+                          ],
+                          "comments": []
+                        },
+                        {
+                          "id": "leaf34",
+                          "count": 3,
+                          "titles": [
+                            "Controversial Interpretations",
+                            "Controversial Film Reception",
+                            "Controversial Film Reception",
+                            "\"Headline Newsworthiness\"",
+                            "Controversial Film Critiques"
+                          ],
+                          "comments": []
+                        },
+                        {
+                          "id": "leaf35",
+                          "count": 6,
+                          "titles": [
+                            "Genre-related insights.",
+                            "Commentary on Literature and Media.",
+                            "Media and Culture Discussion.",
+                            "Book-related comments.",
+                            "Fandom Comments"
+                          ],
+                          "comments": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "branch36",
+                      "count": 35,
+                      "titles": [
+                        "\"Hot Takes\"",
+                        "Biases and Rationality",
+                        "Contentious Discussions.",
+                        "Thought-provoking Discussions.",
+                        "\"Varied Thought-Provoking Topics"
+                      ],
+                      "children": [
+                        {
+                          "id": "leaf37",
+                          "count": 9,
+                          "titles": [
+                            "Intellectual online subcultures.",
+                            "Technology and Society Discussions.",
+                            "Intellectual Subculture Criticisms",
+                            "Intellectual commentary.",
+                            "Intellectual Discussions"
+                          ],
+                          "comments": []
+                        },
+                        {
+                          "id": "leaf38",
+                          "count": 7,
+                          "titles": [
+                            "Ethical Issues in Medicine",
+                            "Ethical Dilemmas",
+                            "Ethical Dilemmas.",
+                            "Ethical Dilemmas",
+                            "Ethical Dilemmas."
+                          ],
+                          "comments": []
+                        },
+                        {
+                          "id": "leaf39",
+                          "count": 4,
+                          "titles": [
+                            "Varied Opinions",
+                            "Assorted Opinions.",
+                            "Varied Opinions.",
+                            "Mixed Opinions.",
+                            "Varied Opinions"
+                          ],
+                          "comments": []
+                        },
+                        {
+                          "id": "leaf40",
+                          "count": 3,
+                          "titles": [
+                            "Ethical Eating.",
+                            "Vegetarian/Vegan Perspectives.",
+                            "Anti-meat sentiment.",
+                            "Meatless Beliefs",
+                            "Vegetarian and Vegan Perspectives."
+                          ],
+                          "comments": []
+                        },
+                        {
+                          "id": "leaf41",
+                          "count": 12,
+                          "titles": [
+                            "Human Nature and Society.",
+                            "\"Varied Perspectives on Society\"",
+                            "\"Varied Perspectives on Social Issues\"",
+                            "Online Commentaries.",
+                            "\"Thought-provoking perspectives\""
+                          ],
+                          "comments": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "branch42",
+                  "count": 117,
+                  "titles": [
+                    "Opinions on Various Issues",
+                    "Hot Takes.",
+                    "Assorted social commentary.",
+                    "Group: Diverse Societal Issues.",
+                    "Varied Opinions"
+                  ],
+                  "children": [
+                    {
+                      "id": "leaf43",
+                      "count": 33,
+                      "titles": [
+                        "\"Varied perspectives on crime\"",
+                        "Crime and Justice Comments.",
+                        "Crime and Policing.",
+                        "Varied perspectives on crime.",
+                        "Crime and Policing."
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf44",
+                      "count": 33,
+                      "titles": [
+                        "Diverse Commentaries.",
+                        "Opinions.",
+                        "Contentious Commentaries.",
+                        "Mixed Bag of Comments",
+                        "Contentious Commentaries."
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf45",
+                      "count": 9,
+                      "titles": [
+                        "Cross-cultural misunderstandings.",
+                        "International Discussions.",
+                        "Language and Identity Comments.",
+                        "Cultural and Political Observations.",
+                        "Cultural Commentary"
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf46",
+                      "count": 14,
+                      "titles": [
+                        "Religious Discourse.",
+                        "Religion and Nationalism Discourse.",
+                        "\"Contrasting Cultural Perspectives\"",
+                        "Religious Commentary.",
+                        "Religion and Nationalism."
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf47",
+                      "count": 28,
+                      "titles": [
+                        "Cultural Commentary.",
+                        "Assorted societal commentary.",
+                        "Societal Observations.",
+                        "Assorted Social Commentary.",
+                        "Assorted Observations."
+                      ],
                       "comments": []
                     }
                   ]
@@ -394,525 +594,426 @@ export const node_data: NodeData = {
           ]
         },
         {
-          "id": "branch63",
-          "count": 712,
-          "title": "Debating Various Topics",
+          "id": "branch48",
+          "count": 363,
+          "titles": [
+            "Miscellaneous Discussions.",
+            "Diverse Opinions on Various Topics.",
+            "Varied Opinions",
+            "Varied Opinions",
+            "Diverse Opinions on Various Topics."
+          ],
           "children": [
             {
-              "id": "branch64",
-              "count": 220,
-              "title": "Diverse Ideas in Comments.",
+              "id": "branch49",
+              "count": 72,
+              "titles": [
+                "Urban Planning and Housing.",
+                "Urban Planning and Housing Discussions.",
+                "Urban Planning and Policy Discussions.",
+                "Urban Planning and Policy Discussions.",
+                "Urban Planning and Housing Discussions."
+              ],
               "children": [
                 {
-                  "id": "leaf65",
-                  "count": 8,
-                  "title": "Twitter's Cultural Importance",
+                  "id": "leaf50",
+                  "count": 17,
+                  "titles": [
+                    "Transportation-related Comments",
+                    "Transportation-related comments.",
+                    "Transportation-related debates.",
+                    "Transportation-related Discussions",
+                    "Transportation Discussions"
+                  ],
                   "comments": []
                 },
                 {
-                  "id": "leaf66",
-                  "count": 4,
-                  "title": "Pornography Discussions",
+                  "id": "leaf51",
+                  "count": 55,
+                  "titles": [
+                    "Urban Planning Discussions",
+                    "\"Housing Discussions\"",
+                    "\"Housing and Urban Development\"",
+                    "Urban Housing Discussions.",
+                    "Urban Housing Discussions"
+                  ],
                   "comments": []
-                },
-                {
-                  "id": "leaf67",
-                  "count": 6,
-                  "title": "Social Media's Negative Impact.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf68",
-                  "count": 5,
-                  "title": "Remote Work and Socialization.",
-                  "comments": []
-                },
-                {
-                  "id": "branch69",
-                  "count": 30,
-                  "title": "Media Critique.",
-                  "children": [
-                    {
-                      "id": "leaf70",
-                      "count": 8,
-                      "title": "Media's Credibility Decline",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf71",
-                      "count": 4,
-                      "title": "Journalism Critique.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf72",
-                      "count": 6,
-                      "title": "Journalistic Twitter Comments.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf73",
-                      "count": 2,
-                      "title": "School Standards and Workplace Culture.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf74",
-                      "count": 2,
-                      "title": "Community Responses.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf75",
-                      "count": 8,
-                      "title": "Critiques of the Media.",
-                      "comments": []
-                    }
-                  ]
-                },
-                {
-                  "id": "branch76",
-                  "count": 28,
-                  "title": "Varied Audience Opinions.",
-                  "children": [
-                    {
-                      "id": "leaf77",
-                      "count": 2,
-                      "title": "Sports Innovations",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf78",
-                      "count": 3,
-                      "title": "Film-Related Discussion",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf79",
-                      "count": 3,
-                      "title": "Star Wars discussion.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf80",
-                      "count": 4,
-                      "title": "Podcasting feedback.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf81",
-                      "count": 7,
-                      "title": "Mixed Bag.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf82",
-                      "count": 3,
-                      "title": "Contradicting Opinions.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf83",
-                      "count": 3,
-                      "title": "Reader Responses.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf84",
-                      "count": 3,
-                      "title": "Harassment and Triggering Comments",
-                      "comments": []
-                    }
-                  ]
-                },
-                {
-                  "id": "branch85",
-                  "count": 39,
-                  "title": "\"Varied perspectives on law enforcement\"",
-                  "children": [
-                    {
-                      "id": "leaf86",
-                      "count": 6,
-                      "title": "Privacy and Government Surveillance.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf87",
-                      "count": 3,
-                      "title": "Police Monitoring.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf88",
-                      "count": 2,
-                      "title": "\"Legal Education\"",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf89",
-                      "count": 6,
-                      "title": "Professionals in public service.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf90",
-                      "count": 5,
-                      "title": "Police Conduct Critiques",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf91",
-                      "count": 7,
-                      "title": "Police Reform Discussions.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf92",
-                      "count": 10,
-                      "title": "Crime Prevention Perspectives",
-                      "comments": []
-                    }
-                  ]
-                },
-                {
-                  "id": "branch93",
-                  "count": 100,
-                  "title": "Media and Politics Discussions",
-                  "children": [
-                    {
-                      "id": "leaf94",
-                      "count": 8,
-                      "title": "\"Putin and Russia Analysis\"",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf95",
-                      "count": 2,
-                      "title": "Pacific Power Struggle.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf96",
-                      "count": 4,
-                      "title": "Energy-related Discussions",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf97",
-                      "count": 4,
-                      "title": "Afghanistan Perspectives",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf98",
-                      "count": 2,
-                      "title": "Butterfly Effect",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf99",
-                      "count": 8,
-                      "title": "\"Varied perspectives on global conflict\"",
-                      "comments": []
-                    },
-                    {
-                      "id": "branch100",
-                      "count": 28,
-                      "title": "History and Identity Comments",
-                      "children": [
-                        {
-                          "id": "leaf101",
-                          "count": 3,
-                          "title": "Historical Perspectives.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf102",
-                          "count": 4,
-                          "title": "Cost and Legacy of Empire.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf103",
-                          "count": 5,
-                          "title": "Debating the 1619 Project.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf104",
-                          "count": 5,
-                          "title": "Israel-Palestine discussion.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf105",
-                          "count": 3,
-                          "title": "Nuances of Identity Group.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf106",
-                          "count": 3,
-                          "title": "Worldbuilding with Diversity.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf107",
-                          "count": 5,
-                          "title": "Terminology Debate.",
-                          "comments": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "branch108",
-                      "count": 44,
-                      "title": "Diverse Views.",
-                      "children": [
-                        {
-                          "id": "leaf109",
-                          "count": 8,
-                          "title": "Debate on China's Influence",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf110",
-                          "count": 2,
-                          "title": "Uncommon Food Discussion",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf111",
-                          "count": 3,
-                          "title": "Technology and Society.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf112",
-                          "count": 9,
-                          "title": "Immigration and Society.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf113",
-                          "count": 5,
-                          "title": "Military and Activism Discussions.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf114",
-                          "count": 7,
-                          "title": "\"Views on Nostalgia and Society\"",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf115",
-                          "count": 5,
-                          "title": "Timezone and Holiday Struggles.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf116",
-                          "count": 5,
-                          "title": "Atheism and Gun Ownership.",
-                          "comments": []
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             },
             {
-              "id": "branch117",
-              "count": 174,
-              "title": "Left-wing Discourse.",
+              "id": "branch52",
+              "count": 189,
+              "titles": [
+                "Political and Social Commentary.",
+                "Opinions on Various Topics.",
+                "Opinions on Various Topics.",
+                "Political Commentary.",
+                "Opinions on Various Topics"
+              ],
               "children": [
                 {
-                  "id": "branch118",
-                  "count": 43,
-                  "title": "Gender and sexuality issues.",
+                  "id": "leaf53",
+                  "count": 3,
+                  "titles": [
+                    "Energy and Emissions Information.",
+                    "Energy and Emissions Discussion.",
+                    "Emissions and energy discussion.",
+                    "Energy and Emissions Data.",
+                    "\"Energy and Emissions Discussion\""
+                  ],
+                  "comments": []
+                },
+                {
+                  "id": "leaf54",
+                  "count": 11,
+                  "titles": [
+                    "Energy and Environment Discussions.",
+                    "Energy and Environment Comments.",
+                    "Energy and Infrastructure Discussion.",
+                    "Energy and Sustainability Discussion",
+                    "Energy and Infrastructure Discussion"
+                  ],
+                  "comments": []
+                },
+                {
+                  "id": "leaf55",
+                  "count": 26,
+                  "titles": [
+                    "Climate Change Discussions.",
+                    "Climate Change Opinions",
+                    "Climate Change Discourse.",
+                    "Climate Change Misconceptions",
+                    "Climate Change Observations."
+                  ],
+                  "comments": []
+                },
+                {
+                  "id": "branch56",
+                  "count": 63,
+                  "titles": [
+                    "Political Ideologies.",
+                    "Political and Social Commentary.",
+                    "Policy and Society Discussions.",
+                    "Policy and Society Discussions.",
+                    "Policy and Political Commentary."
+                  ],
                   "children": [
                     {
-                      "id": "leaf119",
-                      "count": 14,
-                      "title": "Abortion Discourse.",
+                      "id": "leaf57",
+                      "count": 23,
+                      "titles": [
+                        "Wealth and Inequality Discussion.",
+                        "Wealth Inequality and Policy",
+                        "Progressive Economic Arguments.",
+                        "Wealth Inequality and Policy.",
+                        "Wealth and Inequality Discussions."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf120",
-                      "count": 2,
-                      "title": "Transgender inmate placement.",
+                      "id": "leaf58",
+                      "count": 23,
+                      "titles": [
+                        "Policy Discussion Comments.",
+                        "Policy Debates.",
+                        "Policy Discussions.",
+                        "Policy and Politics Discussions.",
+                        "Policy Discussions"
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf121",
+                      "id": "leaf59",
+                      "count": 6,
+                      "titles": [
+                        "Financial perspectives.",
+                        "Personal Giving Experiences.",
+                        "Money Discussions.",
+                        "Personal finance anecdotes.",
+                        "Financial Perspectives"
+                      ],
+                      "comments": []
+                    },
+                    {
+                      "id": "leaf60",
                       "count": 5,
-                      "title": "Discussion on Trans Issues",
+                      "titles": [
+                        "Alcohol Policy Suggestions.",
+                        "Alcohol and Weddings.",
+                        "Alcohol and Wedding Policies.",
+                        "Alcohol & Wedding Policies.",
+                        "Alcohol and Weddings."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf122",
-                      "count": 7,
-                      "title": "Trans Debate Comments.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf123",
-                      "count": 4,
-                      "title": "Gendered Language Debate.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf124",
-                      "count": 7,
-                      "title": "Trans rights discussion.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf125",
-                      "count": 4,
-                      "title": "Gender Terminology Debate",
+                      "id": "leaf61",
+                      "count": 6,
+                      "titles": [
+                        "Varied Discussions",
+                        "Varied Discussions",
+                        "Varied Discussions.",
+                        "Policy and Industry Discussions.",
+                        "Policy Discourse."
+                      ],
                       "comments": []
                     }
                   ]
                 },
                 {
-                  "id": "branch126",
-                  "count": 131,
-                  "title": "\"Woke Discourse Critique\"",
+                  "id": "branch62",
+                  "count": 86,
+                  "titles": [
+                    "Opinions and Commentary.",
+                    "Diverse Opinion Sampler.",
+                    "Varied Opinions on Topics.",
+                    "Mixed Bag of Topics.",
+                    "Mixed Topic Comments."
+                  ],
                   "children": [
                     {
-                      "id": "leaf127",
-                      "count": 7,
-                      "title": "Critiques of Anti-Racist Curriculum",
+                      "id": "leaf63",
+                      "count": 10,
+                      "titles": [
+                        "Remote Work and Business Impact",
+                        "Employment and Remote Work",
+                        "Remote Work and Productivity.",
+                        "Workplace Observations.",
+                        "Tech Industry Discussion."
+                      ],
                       "comments": []
                     },
                     {
-                      "id": "leaf128",
-                      "count": 8,
-                      "title": "Critiques of Wokeness.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf129",
-                      "count": 6,
-                      "title": "Air Pollution and Race.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf130",
-                      "count": 7,
-                      "title": "Elite left politics debate.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf131",
-                      "count": 9,
-                      "title": "Critique of Racialized Politics",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf132",
-                      "count": 3,
-                      "title": "Race-related Opinions",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf133",
-                      "count": 8,
-                      "title": "Racial Justice Discussions",
-                      "comments": []
-                    },
-                    {
-                      "id": "branch134",
-                      "count": 37,
-                      "title": "\"Progressive Ideology and Politics\"",
+                      "id": "branch64",
+                      "count": 76,
+                      "titles": [
+                        "Miscellaneous Remarks.",
+                        "Varied Opinions",
+                        "Varied Opinions",
+                        "Random Musings",
+                        "Varied Opinions"
+                      ],
                       "children": [
                         {
-                          "id": "leaf135",
-                          "count": 4,
-                          "title": "Extreme Politics Discussions",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf136",
-                          "count": 8,
-                          "title": "Idealistic Progressive Ideology.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf137",
-                          "count": 5,
-                          "title": "Left-leaning work patterns.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf138",
-                          "count": 5,
-                          "title": "Political Analysis.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf139",
-                          "count": 15,
-                          "title": "Ideological Divide.",
-                          "comments": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "branch140",
-                      "count": 46,
-                      "title": "Contradictory Opinions",
-                      "children": [
-                        {
-                          "id": "leaf141",
-                          "count": 3,
-                          "title": "Opinions on Public Figures.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf142",
+                          "id": "leaf65",
                           "count": 6,
-                          "title": "Contentious Comments",
+                          "titles": [
+                            "Obesity and Food Discussion.",
+                            "Obesity discussion.",
+                            "Obesity and Nutrition Discourse.",
+                            "Obesity Discussion.",
+                            "Obesity and Nutrition Comments."
+                          ],
                           "comments": []
                         },
                         {
-                          "id": "leaf143",
-                          "count": 7,
-                          "title": "Twitter commentary.",
+                          "id": "leaf66",
+                          "count": 6,
+                          "titles": [
+                            "Modern Conveniences.",
+                            "Modern Conveniences.",
+                            "Modern reflections on commercialism.",
+                            "Modern Convenience and Commerce.",
+                            "Modern Life Observations."
+                          ],
                           "comments": []
                         },
                         {
-                          "id": "leaf144",
-                          "count": 8,
-                          "title": "Progressive Infighting.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf145",
-                          "count": 8,
-                          "title": "Negative Stereotypes.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf146",
-                          "count": 7,
-                          "title": "Behavior Change Discussion",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf147",
-                          "count": 2,
-                          "title": "Safety Culture.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf148",
+                          "id": "leaf67",
                           "count": 5,
-                          "title": "Group name: Diverse perspectives.",
+                          "titles": [
+                            "Foodie insights.",
+                            "Foodie Commentary.",
+                            "Foodie Chatter",
+                            "Foodie Commentary.",
+                            "Foodie Chatter"
+                          ],
                           "comments": []
+                        },
+                        {
+                          "id": "branch68",
+                          "count": 27,
+                          "titles": [
+                            "Mixed Topics",
+                            "Variety of Topics",
+                            "Miscellaneous Comments",
+                            "Varied opinions on different topics.",
+                            "Varied Opinions on Markets"
+                          ],
+                          "children": [
+                            {
+                              "id": "leaf69",
+                              "count": 7,
+                              "titles": [
+                                "Market Regulation Discussions.",
+                                "Market Regulation Discussions",
+                                "Occupational Licensing and Commercial Law.",
+                                "Regulation and Markets",
+                                "Regulatory Reform Discussion."
+                              ],
+                              "comments": []
+                            },
+                            {
+                              "id": "leaf70",
+                              "count": 8,
+                              "titles": [
+                                "Monopoly and Market Power.",
+                                "Economic Size and Power.",
+                                "Economic Power Dynamics.",
+                                "Economic Structures",
+                                "Economic System Critique."
+                              ],
+                              "comments": []
+                            },
+                            {
+                              "id": "leaf71",
+                              "count": 6,
+                              "titles": [
+                                "Trade and Policy Discussion.",
+                                "Trade Policy Discussions.",
+                                "Trade and Policy Discussions.",
+                                "Trade Policy Discussions",
+                                "Trade Policy Thoughts"
+                              ],
+                              "comments": []
+                            },
+                            {
+                              "id": "leaf72",
+                              "count": 6,
+                              "titles": [
+                                "Mixed Bag.",
+                                "Financial Analysis Comments.",
+                                "Opinions.",
+                                "Financial Analysis Comments.",
+                                "Financial Insights."
+                              ],
+                              "comments": []
+                            }
+                          ]
+                        },
+                        {
+                          "id": "branch73",
+                          "count": 32,
+                          "titles": [
+                            "Assorted Opinions.",
+                            "Miscellaneous Discussions",
+                            "Random Thoughts",
+                            "Miscellaneous Commentary",
+                            "Mixed Bag of Topics."
+                          ],
+                          "children": [
+                            {
+                              "id": "branch74",
+                              "count": 13,
+                              "titles": [
+                                "Opinions and Recommendations.",
+                                "Varied Opinions.",
+                                "Miscellaneous Observations",
+                                "Travel and Culture.",
+                                "Discussions on society and culture."
+                              ],
+                              "children": [
+                                {
+                                  "id": "leaf75",
+                                  "count": 8,
+                                  "titles": [
+                                    "Northern Hemisphere Living",
+                                    "Geographical and Social Commentary.",
+                                    "Geographical and cultural observations.",
+                                    "Northern Hemisphere Living.",
+                                    "Geographical Comparisons."
+                                  ],
+                                  "comments": []
+                                },
+                                {
+                                  "id": "leaf76",
+                                  "count": 5,
+                                  "titles": [
+                                    "Controversial Opinions.",
+                                    "Time-related Debates",
+                                    "Time-related debates.",
+                                    "Time-related Nonsense Comments.",
+                                    "Controversial Opinions"
+                                  ],
+                                  "comments": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "branch77",
+                              "count": 19,
+                              "titles": [
+                                "Assorted Opinions.",
+                                "Controversial Opinions.",
+                                "Online Ranting.",
+                                "Opinions on Various Topics",
+                                "Opinions on Various Topics"
+                              ],
+                              "children": [
+                                {
+                                  "id": "leaf78",
+                                  "count": 4,
+                                  "titles": [
+                                    "Asset Price Inflation.",
+                                    "Asset Price Inflation.",
+                                    "Asset price inflation.",
+                                    "Asset Price Inflation.",
+                                    "Asset Price Inflation."
+                                  ],
+                                  "comments": []
+                                },
+                                {
+                                  "id": "leaf79",
+                                  "count": 6,
+                                  "titles": [
+                                    "Privacy and Technology Discussion.",
+                                    "Privacy and Technology Discourse.",
+                                    "Controversial Opinions.",
+                                    "Privacy and Technology Discussion.",
+                                    "Privacy and Technology Discussions"
+                                  ],
+                                  "comments": []
+                                },
+                                {
+                                  "id": "leaf80",
+                                  "count": 2,
+                                  "titles": [
+                                    "AirBNB Pricing Complaints",
+                                    "Airbnb Pricing Discussion.",
+                                    "AirBNB Pricing Complaints.",
+                                    "Airbnb Pricing Complaints",
+                                    "AirBNB Pricing Issues."
+                                  ],
+                                  "comments": []
+                                },
+                                {
+                                  "id": "leaf81",
+                                  "count": 3,
+                                  "titles": [
+                                    "Fraudulent Business Practices.",
+                                    "Fraudulent Business Practices.",
+                                    "Employment and Business Practices.",
+                                    "Fraudulent Expense Practices.",
+                                    "Workplace Abuses."
+                                  ],
+                                  "comments": []
+                                },
+                                {
+                                  "id": "leaf82",
+                                  "count": 4,
+                                  "titles": [
+                                    "Environmental Concerns.",
+                                    "Environmental Concerns.",
+                                    "Environmental Concerns.",
+                                    "Environmental Concerns.",
+                                    "Environmental Concerns"
+                                  ],
+                                  "comments": []
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     }
@@ -921,464 +1022,100 @@ export const node_data: NodeData = {
               ]
             },
             {
-              "id": "branch149",
-              "count": 22,
-              "title": "COVID Discussion Group.",
+              "id": "branch83",
+              "count": 50,
+              "titles": [
+                "COVID Discussions",
+                "COVID Discussions.",
+                "COVID Discussion Group",
+                "COVID Discourse.",
+                "COVID Discussion."
+              ],
               "children": [
                 {
-                  "id": "leaf150",
-                  "count": 9,
-                  "title": "Public Health Controversies",
-                  "comments": []
-                },
-                {
-                  "id": "leaf151",
-                  "count": 3,
-                  "title": "Preparedness for pandemics.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf152",
-                  "count": 3,
-                  "title": "Lab Leak Theory.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf153",
-                  "count": 3,
-                  "title": "COVID Response Discussions",
-                  "comments": []
-                },
-                {
-                  "id": "leaf154",
-                  "count": 4,
-                  "title": "Controversial COVID Comments",
-                  "comments": []
-                }
-              ]
-            },
-            {
-              "id": "branch155",
-              "count": 36,
-              "title": "COVID Discussions",
-              "children": [
-                {
-                  "id": "leaf156",
-                  "count": 12,
-                  "title": "COVID Attitudes",
-                  "comments": []
-                },
-                {
-                  "id": "leaf157",
-                  "count": 6,
-                  "title": "COVID Discussion",
-                  "comments": []
-                },
-                {
-                  "id": "leaf158",
-                  "count": 6,
-                  "title": "Vaccine Attitudes",
-                  "comments": []
-                },
-                {
-                  "id": "leaf159",
+                  "id": "leaf84",
                   "count": 5,
-                  "title": "Mask and transmission discussion.",
+                  "titles": [
+                    "FDA Regulations.",
+                    "FDA Regulation Criticism",
+                    "FDA Criticism.",
+                    "FDA criticisms.",
+                    "FDA Regulation Issues"
+                  ],
                   "comments": []
                 },
                 {
-                  "id": "leaf160",
-                  "count": 7,
-                  "title": "Vaccine Discussion",
-                  "comments": []
-                }
-              ]
-            },
-            {
-              "id": "branch161",
-              "count": 46,
-              "title": "Education Reform Discussions.",
-              "children": [
-                {
-                  "id": "leaf162",
-                  "count": 9,
-                  "title": "Education Discussions.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf163",
-                  "count": 6,
-                  "title": "Opinions on College Majors.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf164",
-                  "count": 12,
-                  "title": "Educational Inequality Discussions.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf165",
-                  "count": 4,
-                  "title": "School Reopening Experiences.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf166",
-                  "count": 5,
-                  "title": "Anti-teacher union comments.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf167",
-                  "count": 3,
-                  "title": "Education-related thoughts.",
-                  "comments": []
-                },
-                {
-                  "id": "leaf168",
-                  "count": 7,
-                  "title": "Education Discussions.",
-                  "comments": []
-                }
-              ]
-            },
-            {
-              "id": "branch169",
-              "count": 214,
-              "title": "Assorted opinions.",
-              "children": [
-                {
-                  "id": "branch170",
-                  "count": 37,
-                  "title": "Parenting and Society",
-                  "children": [
-                    {
-                      "id": "leaf171",
-                      "count": 3,
-                      "title": "Marriage and Weddings.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf172",
-                      "count": 6,
-                      "title": "Opinions on Parenting and Work",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf173",
-                      "count": 4,
-                      "title": "Charity Discussions",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf174",
-                      "count": 6,
-                      "title": "Group Name: Thoughts on Family Policies.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf175",
-                      "count": 5,
-                      "title": "Universal Benefits.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf176",
-                      "count": 7,
-                      "title": "Social Issues",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf177",
-                      "count": 6,
-                      "title": "Economic Policy Debates.",
-                      "comments": []
-                    }
-                  ]
-                },
-                {
-                  "id": "branch178",
-                  "count": 36,
-                  "title": "Tax and Income Reform.",
-                  "children": [
-                    {
-                      "id": "leaf179",
-                      "count": 5,
-                      "title": "College Cost and Funding Discussions",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf180",
-                      "count": 3,
-                      "title": "Compensation for Politicians",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf181",
-                      "count": 4,
-                      "title": "Taxation and Healthcare.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf182",
-                      "count": 8,
-                      "title": "Taxation Debates",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf183",
-                      "count": 6,
-                      "title": "Property Ownership and Government Legitimacy.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf184",
-                      "count": 10,
-                      "title": "Wealth and Class",
-                      "comments": []
-                    }
-                  ]
-                },
-                {
-                  "id": "leaf185",
+                  "id": "leaf85",
                   "count": 15,
-                  "title": "Climate Change Discourse.",
+                  "titles": [
+                    "COVID Discussions.",
+                    "COVID Discussions",
+                    "COVID Discussions",
+                    "COVID Conversations",
+                    "COVID Discussions."
+                  ],
                   "comments": []
                 },
                 {
-                  "id": "leaf186",
-                  "count": 2,
-                  "title": "Geothermal energy enthusiasts.",
+                  "id": "leaf86",
+                  "count": 30,
+                  "titles": [
+                    "Pandemic Preparedness Discussions.",
+                    "\"Public Health Critiques\"",
+                    "Preparedness Discussions.",
+                    "Pandemic Preparedness Comments.",
+                    "\"Pandemic Preparedness Discussion\""
+                  ],
+                  "comments": []
+                }
+              ]
+            },
+            {
+              "id": "branch87",
+              "count": 52,
+              "titles": [
+                "Geopolitical discussions.",
+                "Foreign Policy Discussions",
+                "Geopolitical Analysis.",
+                "International Affairs Comments.",
+                "Geopolitical Observations."
+              ],
+              "children": [
+                {
+                  "id": "leaf88",
+                  "count": 27,
+                  "titles": [
+                    "Diverse Opinions on Ukraine Conflict.",
+                    "Different Viewpoints",
+                    "Diverse perspectives on conflict.",
+                    "Diverse Perspectives on Conflict",
+                    "Varied perspectives on conflict."
+                  ],
                   "comments": []
                 },
                 {
-                  "id": "leaf187",
-                  "count": 6,
-                  "title": "Renewable energy and backup.",
+                  "id": "leaf89",
+                  "count": 14,
+                  "titles": [
+                    "Foreign Policy Comments.",
+                    "Foreign Policy Discussions",
+                    "Foreign Policy Discussions",
+                    "Geopolitical Analysis",
+                    "Foreign Policy Discussions"
+                  ],
                   "comments": []
                 },
                 {
-                  "id": "branch188",
-                  "count": 69,
-                  "title": "Anecdotal Job Frustrations",
-                  "children": [
-                    {
-                      "id": "leaf189",
-                      "count": 7,
-                      "title": "\"DEI industry observations\"",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf190",
-                      "count": 2,
-                      "title": "Life insurance policies.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf191",
-                      "count": 2,
-                      "title": "Group Name: Land Use & Leadership",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf192",
-                      "count": 3,
-                      "title": "Encouraging reflections.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf193",
-                      "count": 4,
-                      "title": "Job Market Discussions.",
-                      "comments": []
-                    },
-                    {
-                      "id": "leaf194",
-                      "count": 7,
-                      "title": "Debate on societal issues.",
-                      "comments": []
-                    },
-                    {
-                      "id": "branch195",
-                      "count": 15,
-                      "title": "Food and Health.",
-                      "children": [
-                        {
-                          "id": "leaf196",
-                          "count": 4,
-                          "title": "Obesity's Driving Factors.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf197",
-                          "count": 3,
-                          "title": "Ethics Comments.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf198",
-                          "count": 3,
-                          "title": "Mortality Beliefs.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf199",
-                          "count": 5,
-                          "title": "Addiction and Harmful Habits.",
-                          "comments": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "branch200",
-                      "count": 29,
-                      "title": "Science and Technology Comments.",
-                      "children": [
-                        {
-                          "id": "leaf201",
-                          "count": 7,
-                          "title": "\"Mixed EA commentary\"",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf202",
-                          "count": 4,
-                          "title": "Nuclear and Risk Discussion.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf203",
-                          "count": 4,
-                          "title": "Expert Communities",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf204",
-                          "count": 4,
-                          "title": "\"Contrarian Perspectives on Science Funding\"",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf205",
-                          "count": 3,
-                          "title": "Precision in Predictions.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf206",
-                          "count": 2,
-                          "title": "Mental Health Discussion.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf207",
-                          "count": 5,
-                          "title": "Heterogeneous commentary.",
-                          "comments": []
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "id": "branch208",
-                  "count": 49,
-                  "title": "Miscellaneous Thoughts",
-                  "children": [
-                    {
-                      "id": "branch209",
-                      "count": 12,
-                      "title": "\"Healthcare Discussion\"",
-                      "children": [
-                        {
-                          "id": "leaf210",
-                          "count": 3,
-                          "title": "Healthcare Discussion",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf211",
-                          "count": 2,
-                          "title": "Medical professions.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf212",
-                          "count": 2,
-                          "title": "Healthcare International Training Group.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf213",
-                          "count": 5,
-                          "title": "Medical Professional Opinions.",
-                          "comments": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "branch214",
-                      "count": 37,
-                      "title": "Variety of Topics.",
-                      "children": [
-                        {
-                          "id": "leaf215",
-                          "count": 5,
-                          "title": "Bureaucracy Critique",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf216",
-                          "count": 6,
-                          "title": "Varied Opinions",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf217",
-                          "count": 4,
-                          "title": "Mexico - US Relations.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf218",
-                          "count": 4,
-                          "title": "Economic analysis.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf219",
-                          "count": 2,
-                          "title": "Metaphorical Misuses.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf220",
-                          "count": 2,
-                          "title": "Banking Niche Discussion",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf221",
-                          "count": 5,
-                          "title": "Critique of Cryptocurrency",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf222",
-                          "count": 5,
-                          "title": "Inflation and Economic Impact.",
-                          "comments": []
-                        },
-                        {
-                          "id": "leaf223",
-                          "count": 4,
-                          "title": "Debt Ceiling Discussion.",
-                          "comments": []
-                        }
-                      ]
-                    }
-                  ]
+                  "id": "leaf90",
+                  "count": 11,
+                  "titles": [
+                    "Historical Reflections.",
+                    "Historical commentary.",
+                    "Civil War Discussions.",
+                    "\"History and Politics\"",
+                    "Historical Perspectives."
+                  ],
+                  "comments": []
                 }
               ]
             }
