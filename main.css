@@ -16,6 +16,11 @@ body {
     color: var(--primary-text-color);
 }
 
+a, a:visited {
+    color: var(--primary-text-color);
+    text-decoration: underline;
+}
+
 svg {
     border: 2px solid var(--primary-text-color);
     background-color: rgb(42, 42, 50);
@@ -26,7 +31,7 @@ svg text {
     font-size: 20px;
 }
 
-#info {
+#info, #footer {
     margin-left: 6px;
 }
 
@@ -47,6 +52,10 @@ h2 {
 .float-left {
     float: left;
     margin-left: 20px;
+}
+
+.float-clear {
+    clear: both;
 }
 
 #node-stats, #node-titles {

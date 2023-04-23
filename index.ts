@@ -91,16 +91,18 @@ const treeLayout = d3.tree<Node>()
     .nodeSize([40, 400])
 ;
 
-function updateWidth() {
+function updateSvgSize() {
     const width = window.innerWidth;
+    const curHeight = 0.75 * window.innerHeight;
     svg.attr("width", width);
-    svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
+    svg.attr("height", Math.min(curHeight, height));
+    //svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
     // treeLayout.size([width, height]);
 }
 
-updateWidth();
+updateSvgSize();
 window.addEventListener("resize", () => {
-    updateWidth();
+    updateSvgSize();
     update();
 });
 
