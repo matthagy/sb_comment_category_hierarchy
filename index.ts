@@ -9,16 +9,32 @@ class Node {
     titles: string[];
     summary: string;
     count: number;
+    medianLikes: number;
+    avgLikes: number;
+    maxLikes: number;
+    commentRms: number;
     children: Node[];
     visible: boolean = true;
     childCollapses: boolean = false;
     selected: boolean = false;
 
-    constructor(id: string, titles: string[], summary: string, count: number, children: Node[]) {
+    constructor(id: string,
+                titles: string[],
+                summary: string,
+                count: number,
+                medianLikes: number,
+                avgLikes: number,
+                maxLikes: number,
+                commentRms: number,
+                children: Node[]) {
         this.id = id;
         this.titles = titles;
         this.summary = summary;
         this.count = count;
+        this.medianLikes = medianLikes;
+        this.avgLikes = avgLikes;
+        this.maxLikes = maxLikes;
+        this.commentRms = commentRms;
         this.children = children;
     }
 
@@ -47,7 +63,9 @@ class Node {
 }
 
 function createNode(data: NodeData): Node {
-    return new Node(data.id, data.titles, data.summary, data.count, (data.children ?? []).map(createNode));
+    return new Node(data.id, data.titles, data.summary,
+        data.count, data.medianLikes, data.avgLikes, data.maxLikes, data.commentRms,
+        (data.children ?? []).map(createNode));
 }
 
 const topLevelNode = createNode(node_data);
@@ -61,8 +79,7 @@ const svg = d3
     //   .attr("width", width)
     .attr("height", height)
     //   .attr("viewBox", [-width / 2, -height / 2, width, height])
-    .style("cursor", "crosshair")
-    .style("border", "1px solid black");
+    .style("cursor", "crosshair");
 
 const initialZoomTransform = "translate(-770,113) scale(0.8) ";
 const g = svg.append("g")
@@ -71,7 +88,7 @@ const g = svg.append("g")
 
 const treeLayout = d3.tree<Node>()
     .size([width, height])
-    .nodeSize([40, 350])
+    .nodeSize([40, 400])
 ;
 
 function updateWidth() {
@@ -122,7 +139,7 @@ function nodeAppend(selection: NodeSelectionType): NodePathType {
 
 function linkStyle(selection: LinkPathType): LinkPathType {
     return selection
-        .style("stroke", "#ccc")
+        .style("stroke", "#666")
         .style("stroke-width", 3)
         .attr("fill", "none")
         //.attr("r", 3)
@@ -159,9 +176,9 @@ function nodeRadius(d: d3.HierarchyPointNode<Node>) {
 function nodeShapeStyle(selection: NodeShapeType): NodeShapeType {
     return selection
         .attr("r", d => nodeRadius(d))
-        .attr("fill", d => d.data.children.length > 0 ? "steelblue" : "orange")
+        .attr("fill", d => d.data.children.length > 0 ? "#00a67d" : "#e9950c")
         .attr("opacity", d => d.data.visible ? 1 : 0)
-        .attr("stroke", d => d.data.selected ? "red" : "black")
+        .attr("stroke", d => d.data.selected ? "#df3079" : "#666")
         .attr("stroke-width", d => d.data.selected ? 3 : 1)
         .on("click", (e, d) => {
             if (e.ctrlKey) {
@@ -186,8 +203,7 @@ function nodeTextAppend(selection: NodePathType): NodeTextType {
 function nodeTextStyle(selection: NodeTextType): NodeTextType {
     return selection
         .text((d) => {
-            const percent = 100 * d.data.count / topLevelNode.count;
-            return `${d.data.titles[0]} (${percent.toFixed(1)}%)`;
+            return d.data.titles[0];
         })
         .attr("transform", d => `translate(${1.2 * nodeRadius(d)},5)`)
         .attr("opacity", d => d.data.visible ? 1 : 0);
@@ -226,6 +242,7 @@ function update() {
     existingNodeText = mergeNodeText;
 }
 
+const statsList = document.getElementById("node-stats");
 const possibleTitlesList = document.getElementById("node-titles");
 const nodeSummaryDiv = document.getElementById("node-summary");
 
@@ -235,7 +252,22 @@ function removeChildren(element: HTMLElement) {
     }
 }
 
+function createLi(text: string): HTMLLIElement {
+    const li = document.createElement("li");
+    li.innerText = text;
+    return li;
+}
+
 function displayNodeInfo(node: Node) {
+    if (statsList !== null) {
+        removeChildren(statsList);
+        const percent = 100 * node.count / topLevelNode.count;
+        statsList.appendChild(createLi(`${percent.toFixed(1)}% of comments`));
+        statsList.appendChild(createLi(`${node.medianLikes} median likes`));
+        statsList.appendChild(createLi(`${node.avgLikes} average likes`));
+        statsList.appendChild(createLi(`${node.maxLikes} max likes`));
+        statsList.appendChild(createLi(`${node.commentRms} semantic breadth`));
+    }
     if (possibleTitlesList !== null) {
         removeChildren(possibleTitlesList);
         for (const title of node.titles) {
@@ -263,6 +295,8 @@ function setInitialVisibility(node: Node, depth: number = 0) {
 }
 
 // setInitialVisibility(topLevelNode);
+displayNodeInfo(topLevelNode);
+topLevelNode.selected = true;
 update();
 
 function castPoint(x: any): d3.HierarchyPointNode<Node> {
@@ -276,7 +310,7 @@ const zoom = d3
     //.translateExtent([[0, 0], [width, height]])
     .on("zoom", e => {
         // console.log(`Zoom: ${e.transform}`);
-        g.attr("transform",  initialZoomTransform +
+        g.attr("transform", initialZoomTransform +
             e.transform.toString());
     });
 svg.call(zoom);
