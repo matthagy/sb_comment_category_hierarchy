@@ -66,11 +66,30 @@ h2 {
 
 
 #node-summary {
-    max-width: 900px;
     margin-top: 0;
     padding-left: 0;
 }
 
 #node-summary p {
     margin-block-start: 0.3em;
+    text-align: left;
 }
+
+@media (max-width: 1000px) {
+    #node-summary {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+    #node-summary {
+        width: 600px;
+    }
+}
+
+@media (min-width: 1501px) {
+    #node-summary {
+        width: 900px;
+    }
+}
+
