@@ -81,7 +81,7 @@ const svg = d3
     //   .attr("viewBox", [-width / 2, -height / 2, width, height])
     .style("cursor", "crosshair");
 
-const initialZoomTransform = "translate(-770,113) scale(0.8) ";
+const initialZoomTransform = "translate(89.0252, 647.519) scale(0.812252, 0.812252)";
 const g = svg.append("g")
     .attr("transform", initialZoomTransform);
 
