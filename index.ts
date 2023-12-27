@@ -81,7 +81,7 @@ const svg = d3
     //   .attr("viewBox", [-width / 2, -height / 2, width, height])
     .style("cursor", "crosshair");
 
-const initialZoomTransform = "translate(89.0252, 647.519) scale(0.812252, 0.812252)";
+const initialZoomTransform = "translate(89.0252, 647.519) scale(0.812252, 0.812252) translate(69.2859, -424.157) scale(0.481631, 0.481631) translate(-589.828, 540.463) scale(1.36226, 1.36226) translate(263.257, -570.026) scale(1.02527, 1.02527)";
 const g = svg.append("g")
     .attr("transform", initialZoomTransform);
 
@@ -93,7 +93,9 @@ const treeLayout = d3.tree<Node>()
 
 function updateSvgSize() {
     const width = window.innerWidth;
-    const curHeight = 0.75 * window.innerHeight;
+    const screenHeight = window.innerHeight;
+
+    const curHeight = 0.5 * screenHeight;
     svg.attr("width", width);
     svg.attr("height", Math.min(curHeight, height));
     //svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
